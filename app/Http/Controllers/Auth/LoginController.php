@@ -107,12 +107,11 @@ class LoginController extends Controller
     }
 
     public function google(){
-        return Socialite::driver('google')->stateless()->redirect();
+        return Socialite::driver('google')->redirect();
     }
 
     public function googleRedirect(){
-        // $user = Socialite::driver('google')->user();
-        $user = Socialite::driver('google')->stateless()->user();
+        $user = Socialite::driver('google')->user();
         // Logic
         $user = User::firstOrCreate([
             'email' => $user->email

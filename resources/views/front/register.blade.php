@@ -20,7 +20,7 @@
         <link rel="stylesheet" href="{{asset('theme/css/vendors/uikit.min.css')}}">
         <link rel="stylesheet" href="{{asset('theme/css/style.css')}}">
     </head>
-    
+
     <body>
         <!-- preloader begin -->
         <div class="in-loader">
@@ -60,10 +60,10 @@
                                                 <span class="uk-form-icon uk-form-icon-flip fas fa-envelope fa-sm"></span>
                                                 <input onblur="duplicateEmail(this)" autocomplete="off" class="uk-input uk-border-rounded" id="username" name="email" value="{{ old('email') }}" required type="text" placeholder="email">
                                             </div>
-                                     
+
                                                 <small id="emailChecker" class="uk-alert-danger" uk-alert>This Email Has Been Used By Another User</small>
-                                            
-                                            
+
+
                                             <div class="uk-margin-small uk-width-1-1 uk-inline">
                                                 <span class="uk-form-icon uk-form-icon-flip fas fa-lock fa-sm"></span>
                                                 <input autocomplete="off" class="uk-input uk-border-rounded" id="password" name="password" type="password" placeholder="Password">
@@ -72,7 +72,7 @@
                                                 <span class="uk-form-icon uk-form-icon-flip fas fa-lock fa-sm"></span>
                                                 <input autocomplete="off" class="uk-input uk-border-rounded" id="password" name="password_confirmation" type="password" placeholder="Password Confirm">
                                             </div>
-                                          
+
                                             <div class="uk-margin-small uk-width-1-1">
                                                 <button class="uk-button uk-width-1-1 uk-button-primary uk-border-rounded uk-float-left" type="submit" name="submit">Sign Up</button>
                                             </div>
@@ -80,8 +80,8 @@
                                         <!-- login form end -->
                                         <p class="uk-heading-line uk-text-center"><span>Or sign Up With</span></p>
                                         <div class="uk-margin-medium-bottom uk-text-center">
-                                            <a class="uk-button uk-button-small uk-border-rounded in-brand-google" href="{{url('/')}}/apps/google"><i class="fab fa-google uk-margin-small-right"></i>Google</a>
-                                            <a class="uk-button uk-button-small uk-border-rounded in-brand-facebook" href="{{url('/')}}/apps/facebook"><i class="fab fa-facebook-f uk-margin-small-right"></i>Facebook</a>
+                                            {{-- <a class="uk-button uk-button-small uk-border-rounded in-brand-google" href="{{url('/')}}/apps/google"><i class="fab fa-google uk-margin-small-right"></i>Google</a> --}}
+                                            {{-- <a class="uk-button uk-button-small uk-border-rounded in-brand-facebook" href="{{url('/')}}/apps/facebook"><i class="fab fa-facebook-f uk-margin-small-right"></i>Facebook</a> --}}
                                         </div>
                                     </div>
                                 </div>
@@ -91,7 +91,7 @@
                 </div>
             </div>
             <!-- section content end -->
-        
+
         </main>
         <!-- Javascript -->
         <script src="{{asset('theme/js/vendors/uikit.min.js')}}"></script>
@@ -101,11 +101,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
 <script>
     $( document ).ready( function(){
-       
+
         $('#emailChecker').hide()
     });
-       
-    
+
+
 </script>
         {{-- Ajax Check Here --}}
         <script>
@@ -132,8 +132,8 @@
         </script>
         {{-- Ajax Check --}}
     </body>
-    
-    @endforeach 
+
+    @endforeach
    </html>
     @endforeach
 

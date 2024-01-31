@@ -3,7 +3,7 @@
     @foreach ($SiteSettings as $Settings)
     <!DOCTYPE html>
     <html lang="zxx" dir="ltr">
-  
+
     <head>
         <!-- Standard Meta -->
         <meta charset="utf-8">
@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="{{asset('theme/css/style.css')}}">
 
     </head>
-    
+
     <body>
         <!-- preloader begin -->
         <div class="in-loader">
@@ -39,7 +39,7 @@
                     <div class="uk-grid" data-uk-height-viewport="expand: true">
                         <div class="uk-width-3-5@m uk-background-cover uk-background-center-right uk-visible@m uk-box-shadow-xlarge" style="background-image: url('{{url('/uploads/banners')}}/{{$Banner->image}}');">
                         </div>
-                      
+
                         <div class="uk-width-expand@m uk-flex uk-flex-middle">
                             <div class="uk-grid uk-flex-center">
                                 <div class="uk-width-3-5@m">
@@ -76,13 +76,13 @@
                                         <!-- login form begin -->
                                         <form class="uk-grid uk-form" method="POST" action="{{ route('login') }}">
                                             {{csrf_field()}}
-                                            
+
                                             <div class="uk-margin-small uk-width-1-1 uk-inline">
                                                 <span class="uk-form-icon uk-form-icon-flip fas fa-envelope fa-sm"></span>
                                                 <input name="email" value="{{ old('email') }}"  class="uk-input uk-border-rounded" id="username" value="" type="text" placeholder="email">
                                             </div>
 
-             
+
                                             @error('email')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
@@ -117,7 +117,7 @@
                                         <!-- login form end -->
                                         <p class="uk-heading-line uk-text-center"><span>Or sign in with</span></p>
                                         <div class="uk-margin-medium-bottom uk-text-center">
-                                            <a class="uk-button uk-button-small uk-border-rounded in-brand-google" href="{{url('/')}}/apps/google"><i class="fab fa-google uk-margin-small-right"></i>Google</a>
+                                            {{-- <a class="uk-button uk-button-small uk-border-rounded in-brand-google" href="{{url('/')}}/apps/google"><i class="fab fa-google uk-margin-small-right"></i>Google</a> --}}
                                             <!--<a class="uk-button uk-button-small uk-border-rounded in-brand-facebook" href="{{url('/')}}/apps/facebook"><i class="fab fa-facebook-f uk-margin-small-right"></i>Facebook</a>-->
                                         </div>
                                     </div>
