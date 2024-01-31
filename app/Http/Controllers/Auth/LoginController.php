@@ -39,7 +39,7 @@ class LoginController extends Controller
         Session::flash('message', "You have successfully logged out");
         return redirect()->route('loginRoute');
     }
-    
+
 
     /**
      * Where to redirect users after login.
@@ -59,14 +59,14 @@ class LoginController extends Controller
     }
 
     public function login(Request $request)
-    {   
+    {
         $input = $request->all();
-   
+
         $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required',
         ]);
-   
+
         if(auth()->attempt(array('email' => $input['email'], 'password' => $input['password'])))
         {
             if(auth()->user()->status == 0) {
@@ -79,12 +79,12 @@ class LoginController extends Controller
                     return redirect()->route('my-course');
                 }
             }
-            
+
         }else{
             Session::flash('error', "email-address or password are wrong.");
             return redirect()->route('loginRoute');
         }
-          
+
     }
 
     public function facebookRedirect(){
@@ -106,8 +106,10 @@ class LoginController extends Controller
         return Socialite::driver('facebook')->redirect();
     }
 
+
     public function google(){
-        return Socialite::driver('google')->redirect();
+        // return Socialite::driver('google')->redirect();
+        Socialite::driver('google')->stateless()->user();
     }
 
     public function googleRedirect(){
@@ -125,7 +127,7 @@ class LoginController extends Controller
         return redirect()->to('/apps/my-course');
     }
 
-    
+
     public function callback(SocialFacebookAccountService $service)
     {
         $user = $service->createOrGetUser(Socialite::driver('facebook')->user());
