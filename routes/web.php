@@ -60,7 +60,7 @@ Route::post('/checkemail', [HomeController::class, 'checkEmail']);
 // Route::post('/checkemail',['uses'=>'PagesController@checkEmail']);
 
 // clear cache command
-Route::get('clear-cache', function()
+Route::get('cache:clear', function()
 {
     // Call and Artisan command from within your application.
     Artisan::call('clear:cache');
