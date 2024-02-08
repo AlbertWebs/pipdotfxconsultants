@@ -60,10 +60,10 @@ Route::post('/checkemail', [HomeController::class, 'checkEmail']);
 // Route::post('/checkemail',['uses'=>'PagesController@checkEmail']);
 
 // clear cache command
-Route::get('cache:clear', function()
+Route::get('cache-clear', function()
 {
     // Call and Artisan command from within your application.
-    Artisan::call('clear:cache');
+    Artisan::call('cache:clear');
 });
 
 Route::get('/remove-colon', [HomeController::class, 'removeSemicolon']);
