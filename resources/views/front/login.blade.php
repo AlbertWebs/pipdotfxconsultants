@@ -75,7 +75,7 @@
                                         <p class="uk-text-small uk-margin-remove-top uk-margin-medium-bottom">Don't have an account? <a href="{{url('/')}}/forex-courses/register">Sign Up</a></p>
                                         <!-- login form begin -->
                                         <form class="uk-grid uk-form" method="POST" action="{{ route('login') }}">
-                                            {{csrf_field()}}
+                                            @csrf
 
                                             <div class="uk-margin-small uk-width-1-1 uk-inline">
                                                 <span class="uk-form-icon uk-form-icon-flip fas fa-envelope fa-sm"></span>
