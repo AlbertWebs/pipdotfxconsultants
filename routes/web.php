@@ -59,7 +59,12 @@ Route::get('/all-forex-signals', [HomeController::class, 'allSignals']);
 Route::post('/checkemail', [HomeController::class, 'checkEmail']);
 // Route::post('/checkemail',['uses'=>'PagesController@checkEmail']);
 
-
+// clear cache command
+Route::get('clear-cache', function()
+{
+    // Call and Artisan command from within your application.
+    Artisan::call('clear:cache');
+});
 
 Route::get('/remove-colon', [HomeController::class, 'removeSemicolon']);
 
